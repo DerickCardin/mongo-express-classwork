@@ -14,8 +14,8 @@ User.find()
 
 //url /api/users/derick
 router.get('/:name', (req, res) => {
-  const name = req.params.name;
-  User.findOne({ name: name })
+  const { name } = req.params;
+  User.findOne({ name })
   .then(user => {
     console.log(user);
     if(!user) {
@@ -25,5 +25,17 @@ router.get('/:name', (req, res) => {
     })
   .catch(err => res.status(500).json({message: err}));
 });
+
+router.post('/', (req, res) => {
+  const { name, password, avatar } = req.body;
+  
+  const newUser = new User({
+    name,
+    password,
+    avatar
+  })
+  
+  newUser.save()
+})
   
 module.exports = router;

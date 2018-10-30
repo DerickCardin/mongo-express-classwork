@@ -1,3 +1,3 @@
 module.exports = {
-    mongoURI: "mongodb://me_admin:welcome1@ds129183.mlab.com:29183/mongo_express" //access to the database
+    mongoURI: "mongodb://me_admin:Cardin50@ds259732.mlab.com:59732/derickcardin" //access to the database
 }
